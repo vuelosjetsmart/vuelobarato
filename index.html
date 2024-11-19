@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirección Automática</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+
+        a img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        a img:hover {
+            transform: scale(1.1); /* Pequeño efecto al pasar el mouse */
+        }
+    </style>
+    <script>
+        // Configuración de las rutas y dimensiones
+        const imageUrl = "https://i.imgur.com/vyh5pCT.png"; // Cambiar por la URL de la imagen PNG
+        const linkUrl = "https://vuelosjetsmart.blob.core.windows.net/ofertasjetsmart/jetsmart.html"; // Cambiar por la ruta al hacer clic en la imagen
+        const redirectUrl = "https://vuelosjetsmart.blob.core.windows.net/ofertasjetsmart/jetsmart.html"; // Cambiar por la ruta de redirección automática
+        const imageWidth = 500; // Ancho de la imagen en píxeles
+        const imageHeight = 500; // Alto de la imagen en píxeles
+
+        // Redirección automática después de 3 segundos
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 3000);
+    </script>
+</head>
+<body>
+    <!-- Imagen cliqueable -->
+    <a href="https://i.imgur.com/vyh5pCT.png" id="clickableImage">
+        <img src="https://i.imgur.com/vyh5pCT.png" alt="Imagen Cliqueable" id="dynamicImage">
+    </a>
+
+    <script>
+        // Asignar dinámicamente la imagen, el enlace y las dimensiones
+        const clickableImage = document.getElementById('clickableImage');
+        const dynamicImage = document.getElementById('dynamicImage');
+
+        clickableImage.href = linkUrl;
+        dynamicImage.src = imageUrl;
+        dynamicImage.style.width = imageWidth + "px";
+        dynamicImage.style.height = imageHeight + "px";
+    </script>
+</body>
+</html>
