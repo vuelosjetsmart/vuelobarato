@@ -3,34 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vuela con JetSmart Colombia solo por 49.900</title>
+    <title>JetSmart Vuelos Baratos Colombia</title>
     <style>
         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        /* Estilo del encabezado fijo */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Fondo opcional */
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .fixed-header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Espaciado para evitar que el contenido se superponga al encabezado */
+        .content {
+            margin-top: 100px; /* Ajustar según la altura del encabezado */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-            font-family: Arial, sans-serif;
+            height: calc(100vh - 100px); /* Resta la altura del encabezado */
         }
 
         a img {
             cursor: pointer;
-            transition: transform 0.3s ease;
+            animation: heartbeat 1.5s infinite; /* Animación de latido */
         }
 
-        a img:hover {
-            transform: scale(1.1); /* Pequeño efecto al pasar el mouse */
+        /* Animación de latido */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
     </style>
     <script>
         // Configuración de las rutas y dimensiones
-        const imageUrl = "https://i.imgur.com/vyh5pCT.png"; // Cambiar por la URL de la imagen PNG
+        const imageUrl = "https://i.imgur.com/dt4u5PO.png"; // Cambiar por la URL de la imagen PNG
         const linkUrl = "https://vuelosjetsmart.blob.core.windows.net/ofertasjetsmart/jetsmart.html"; // Cambiar por la ruta al hacer clic en la imagen
         const redirectUrl = "https://vuelosjetsmart.blob.core.windows.net/ofertasjetsmart/jetsmart.html"; // Cambiar por la ruta de redirección automática
-        const imageWidth = 500; // Ancho de la imagen en píxeles
-        const imageHeight = 500; // Alto de la imagen en píxeles
+        const imageWidth = 140; // Ancho de la imagen en píxeles
+        const imageHeight = 120; // Alto de la imagen en píxeles
 
         // Redirección automática después de 3 segundos
         setTimeout(() => {
@@ -39,10 +68,17 @@
     </script>
 </head>
 <body>
-    <!-- Imagen cliqueable -->
-    <a href="https://i.imgur.com/vyh5pCT.png" id="clickableImage">
-        <img src="https://i.imgur.com/vyh5pCT.png" alt="Imagen Cliqueable" id="dynamicImage">
-    </a>
+    <!-- Encabezado fijo -->
+    <div class="fixed-header">
+        <img src="https://i.imgur.com/g3n2eFv.png" alt="Encabezado Fijo" style="width: px; height: 100px;">
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <a href="https://i.imgur.com/LpIokfQ.png" id="clickableImage">
+            <img src="https://i.imgur.com/dt4u5PO.png" alt="Imagen Cliqueable" id="dynamicImage">
+        </a>
+    </div>
 
     <script>
         // Asignar dinámicamente la imagen, el enlace y las dimensiones
